@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SalesforceAutomation">
+  <test name="RegressionTest">
+  <parameter name="browser" value="chrome"></parameter>
+    <classes>
+  	 	 	<class name="com.salesforce.tests.LoginTest"/> 
+      	<!--<class name="com.salesforce.tests.UserMenuTest"/> 
+     		<class name="com.salesforce.tests.AccountTest"/> 
+     	  	<class name="com.salesforce.tests.OpportunityTest"/> -->    	
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

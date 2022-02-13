@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [SalesforceAutomation]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="RegressionTest(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.salesforce.tests.UserMenuTest">
+        <methods>
+          <include name="MyProfile_6"/>
+          <include name="setUp"/>
+          <include name="initialSetUp"/>
+          <include name="SelectUserMenu_5"/>
+          <include name="tearDown"/>
+          <include name="endUp"/>
+        </methods>
+      </class> <!-- com.salesforce.tests.UserMenuTest -->
+    </classes>
+  </test> <!-- RegressionTest(failed) -->
+</suite> <!-- Failed suite [SalesforceAutomation] -->

@@ -1,0 +1,17 @@
+com\salesforce\pages\account\AccViewPage.class
+com\salesforce\pages\contacts\ContactsPage.class
+com\salesforce\tests\LoginTest.class
+com\salesforce\pages\opportunity\NewOppHomePage.class
+com\salesforce\tests\AccountTest.class
+com\salesforce\pages\account\AccountPage.class
+com\salesforce\pages\usermenu\MyProfilePage.class
+com\salesforce\pages\home\HomePage.class
+com\salesforce\tests\UserMenuTest.class
+com\salesforce\basetest\BaseTest.class
+com\salesforce\pages\leads\LeadsPage.class
+com\salesforce\pages\opportunity\OpporPage.class
+com\salesforce\pages\sfdclogin\LoginPage.class
+com\salesforce\pages\usermenu\UserMenuPage.class
+com\salesforce\pages\sfdclogin\ForgotPasswordPage.class
+com\salesforce\pages\usermenu\MySettingsPage.class
+com\salesforce\tests\OpportunityTest.class

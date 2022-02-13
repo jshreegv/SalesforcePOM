@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-02-12T22:47:53 CST" name="SalesforceAutomation" finished-at="2022-02-12T22:48:23 CST" duration-ms="29572">
+    <groups>
+    </groups>
+    <test started-at="2022-02-12T22:47:53 CST" name="RegressionTest" finished-at="2022-02-12T22:48:23 CST" duration-ms="29572">
+      <class name="com.salesforce.tests.LoginTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.salesforce.tests.LoginTest@619713e5]" started-at="2022-02-12T22:47:53 CST" name="setUp" finished-at="2022-02-12T22:47:54 CST" duration-ms="165" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="initialSetUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.salesforce.tests.LoginTest@619713e5]" started-at="2022-02-12T22:47:54 CST" name="initialSetUp" finished-at="2022-02-12T22:47:59 CST" duration-ms="5479" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void com.salesforce.tests.LoginTest.CheckRememberMe_3()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialSetUp -->
+        <test-method signature="CheckRememberMe_3()[pri:0, instance:com.salesforce.tests.LoginTest@619713e5]" started-at="2022-02-12T22:47:59 CST" name="CheckRememberMe_3" finished-at="2022-02-12T22:48:06 CST" duration-ms="7343" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckRememberMe_3 -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.salesforce.tests.LoginTest@619713e5]" started-at="2022-02-12T22:48:06 CST" name="tearDown" finished-at="2022-02-12T22:48:07 CST" duration-ms="687" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=CheckRememberMe_3 status=SUCCESS method=LoginTest.CheckRememberMe_3()[pri:0, instance:com.salesforce.tests.LoginTest@619713e5] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="initialSetUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.salesforce.tests.LoginTest@619713e5]" started-at="2022-02-12T22:48:07 CST" name="initialSetUp" finished-at="2022-02-12T22:48:09 CST" duration-ms="1907" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void com.salesforce.tests.LoginTest.ForgotPassword_4a()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialSetUp -->
+        <test-method signature="ForgotPassword_4a()[pri:0, instance:com.salesforce.tests.LoginTest@619713e5]" started-at="2022-02-12T22:48:09 CST" name="ForgotPassword_4a" finished-at="2022-02-12T22:48:11 CST" duration-ms="1871" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ForgotPassword_4a -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.salesforce.tests.LoginTest@619713e5]" started-at="2022-02-12T22:48:11 CST" name="tearDown" finished-at="2022-02-12T22:48:12 CST" duration-ms="628" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=ForgotPassword_4a status=SUCCESS method=LoginTest.ForgotPassword_4a()[pri:0, instance:com.salesforce.tests.LoginTest@619713e5] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="initialSetUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.salesforce.tests.LoginTest@619713e5]" started-at="2022-02-12T22:48:12 CST" name="initialSetUp" finished-at="2022-02-12T22:48:13 CST" duration-ms="1853" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void com.salesforce.tests.LoginTest.ForgotPassword_4b()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialSetUp -->
+        <test-method signature="ForgotPassword_4b()[pri:0, instance:com.salesforce.tests.LoginTest@619713e5]" started-at="2022-02-12T22:48:13 CST" name="ForgotPassword_4b" finished-at="2022-02-12T22:48:14 CST" duration-ms="765" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ForgotPassword_4b -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.salesforce.tests.LoginTest@619713e5]" started-at="2022-02-12T22:48:14 CST" name="tearDown" finished-at="2022-02-12T22:48:15 CST" duration-ms="659" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=ForgotPassword_4b status=SUCCESS method=LoginTest.ForgotPassword_4b()[pri:0, instance:com.salesforce.tests.LoginTest@619713e5] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="initialSetUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.salesforce.tests.LoginTest@619713e5]" started-at="2022-02-12T22:48:15 CST" name="initialSetUp" finished-at="2022-02-12T22:48:17 CST" duration-ms="1820" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void com.salesforce.tests.LoginTest.LoginErrorMsg_1()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialSetUp -->
+        <test-method signature="LoginErrorMsg_1()[pri:0, instance:com.salesforce.tests.LoginTest@619713e5]" started-at="2022-02-12T22:48:17 CST" name="LoginErrorMsg_1" finished-at="2022-02-12T22:48:17 CST" duration-ms="505" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginErrorMsg_1 -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.salesforce.tests.LoginTest@619713e5]" started-at="2022-02-12T22:48:17 CST" name="tearDown" finished-at="2022-02-12T22:48:18 CST" duration-ms="727" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=LoginErrorMsg_1 status=SUCCESS method=LoginTest.LoginErrorMsg_1()[pri:0, instance:com.salesforce.tests.LoginTest@619713e5] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="initialSetUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.salesforce.tests.LoginTest@619713e5]" started-at="2022-02-12T22:48:18 CST" name="initialSetUp" finished-at="2022-02-12T22:48:20 CST" duration-ms="2047" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void com.salesforce.tests.LoginTest.LoginToSalesforce_2()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialSetUp -->
+        <test-method signature="LoginToSalesforce_2()[pri:0, instance:com.salesforce.tests.LoginTest@619713e5]" started-at="2022-02-12T22:48:20 CST" name="LoginToSalesforce_2" finished-at="2022-02-12T22:48:22 CST" duration-ms="2107" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginToSalesforce_2 -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.salesforce.tests.LoginTest@619713e5]" started-at="2022-02-12T22:48:22 CST" name="tearDown" finished-at="2022-02-12T22:48:23 CST" duration-ms="628" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=LoginToSalesforce_2 status=SUCCESS method=LoginTest.LoginToSalesforce_2()[pri:0, instance:com.salesforce.tests.LoginTest@619713e5] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="endUp()[pri:0, instance:com.salesforce.tests.LoginTest@619713e5]" started-at="2022-02-12T22:48:23 CST" name="endUp" finished-at="2022-02-12T22:48:23 CST" duration-ms="335" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endUp -->
+      </class> <!-- com.salesforce.tests.LoginTest -->
+    </test> <!-- RegressionTest -->
+  </suite> <!-- SalesforceAutomation -->
+</testng-results>
