@@ -9,14 +9,92 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">SalesforceAutomation</th></tr>
-<tr><td><a href="#t0">RegressionTest</a></td><td class="num">5</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">29,572</td><td></td><td></td></tr>
+<tr><td><a href="#t0">RegressionTest</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num attn">3</td><td class="num">267,692</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">SalesforceAutomation</th></tr></tbody><tbody id="t0"><tr><th colspan="4">RegressionTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="5">com.salesforce.tests.LoginTest</td><td><a href="#m0">CheckRememberMe_3</a></td><td rowspan="1">1644727679594</td><td rowspan="1">7343</td></tr><tr class="passedeven"><td><a href="#m1">ForgotPassword_4a</a></td><td rowspan="1">1644727689537</td><td rowspan="1">1871</td></tr><tr class="passedeven"><td><a href="#m2">ForgotPassword_4b</a></td><td rowspan="1">1644727693892</td><td rowspan="1">765</td></tr><tr class="passedeven"><td><a href="#m3">LoginErrorMsg_1</a></td><td rowspan="1">1644727697139</td><td rowspan="1">505</td></tr><tr class="passedeven"><td><a href="#m4">LoginToSalesforce_2</a></td><td rowspan="1">1644727700422</td><td rowspan="1">2107</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">SalesforceAutomation</th></tr></tbody><tbody id="t0"><tr><th colspan="4">RegressionTest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="3">com.salesforce.tests.AccountTest</td><td><a href="#m0">MergeAccount</a></td><td rowspan="1">1645593128387</td><td rowspan="1">30775</td></tr><tr class="failedeven"><td><a href="#m1">SelectAccount</a></td><td rowspan="1">1645593180396</td><td rowspan="1">37484</td></tr><tr class="failedeven"><td><a href="#m2">Selectnewview</a></td><td rowspan="1">1645593287085</td><td rowspan="1">30818</td></tr><tr><th colspan="4">RegressionTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.salesforce.tests.AccountTest</td><td><a href="#m3">CreateAccountreport</a></td><td rowspan="1">1645593078277</td><td rowspan="1">30882</td></tr><tr class="passedeven"><td><a href="#m4">SelectEditview</a></td><td rowspan="1">1645593240820</td><td rowspan="1">31272</td></tr></tbody>
 </table>
-<h2>RegressionTest</h2><h3 id="m0">com.salesforce.tests.LoginTest#CheckRememberMe_3</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.salesforce.tests.LoginTest#ForgotPassword_4a</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.salesforce.tests.LoginTest#ForgotPassword_4b</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.salesforce.tests.LoginTest#LoginErrorMsg_1</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">com.salesforce.tests.LoginTest#LoginToSalesforce_2</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>RegressionTest</h2><h3 id="m0">com.salesforce.tests.AccountTest#MergeAccount</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@title=&apos;Select row 1&apos;]&quot;}
+  (Session info: chrome=98.0.4758.102)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-D2KIIH1&apos;, ip: &apos;192.168.1.89&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_321&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 98.0.4758.102 (273bf7ac8c90..., userDataDir: C:\Users\pradeep\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:55888}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 987b6e896ea554644cfd46e95bab7040
+*** Element info: {Using=xpath, value=//input[@title=&apos;Select row 1&apos;]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy11.isDisplayed(Unknown Source)
+	at com.salesforce.basepage.BasePage.Radiobutton(BasePage.java:332)
+	at com.salesforce.pages.account.AccountPage.ClickRadiobutton2(AccountPage.java:229)
+	at com.salesforce.tests.AccountTest.MergeAccount(AccountTest.java:102)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.salesforce.tests.AccountTest#SelectAccount</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//select[@name=&apos;00N5f000006iJHc&apos;]&quot;}
+  (Session info: chrome=98.0.4758.102)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-D2KIIH1&apos;, ip: &apos;192.168.1.89&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_321&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 98.0.4758.102 (273bf7ac8c90..., userDataDir: C:\Users\pradeep\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:60912}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 12c8e743b3de5ad08d68af758e058ad5
+*** Element info: {Using=xpath, value=//select[@name=&apos;00N5f000006iJHc&apos;]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy11.isDisplayed(Unknown Source)
+	at com.salesforce.basepage.BasePage.selectByVisibleText(BasePage.java:319)
+	at com.salesforce.pages.account.AccountPage.enterintoCustomerPriority(AccountPage.java:165)
+	at com.salesforce.tests.AccountTest.SelectAccount(AccountTest.java:57)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.salesforce.tests.AccountTest#Selectnewview</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//tbody/tr[1]/td[2]/div[2]/form[1]/div[1]/span[1]/span[2]/a[1]&quot;}
+  (Session info: chrome=98.0.4758.102)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-D2KIIH1&apos;, ip: &apos;192.168.1.89&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_321&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 98.0.4758.102 (273bf7ac8c90..., userDataDir: C:\Users\pradeep\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:61046}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e70cfb10bc815f14542e250fe81d4967
+*** Element info: {Using=xpath, value=//tbody/tr[1]/td[2]/div[2]/form[1]/div[1]/span[1]/span[2]/a[1]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy11.isDisplayed(Unknown Source)
+	at com.salesforce.basepage.BasePage.clickObj(BasePage.java:90)
+	at com.salesforce.pages.account.AccountPage.ClickEdit(AccountPage.java:193)
+	at com.salesforce.tests.AccountTest.Selectnewview(AccountTest.java:67)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.salesforce.tests.AccountTest#CreateAccountreport</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">com.salesforce.tests.AccountTest#SelectEditview</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

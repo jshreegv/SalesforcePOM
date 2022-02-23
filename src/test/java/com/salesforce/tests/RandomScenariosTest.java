@@ -1,175 +1,142 @@
 package com.salesforce.tests;
 
-import java.util.ArrayList;
-
+import java.io.IOException;
+import java.lang.reflect.Method;
+import java.time.LocalDate;
+import java.util.Set;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import com.salesforce.basetest.BaseTest;
+import com.salesforce.pages.account.AccountPage;
+import com.salesforce.pages.contacts.ContactsPage;
+import com.salesforce.pages.home.HomePage;
+import com.salesforce.pages.leads.LeadsPage;
+import com.salesforce.pages.opportunity.OpportunityPage;
+import com.salesforce.pages.randomscenarios.RandomScenariosPage;
+import com.salesforce.pages.sfdclogin.LoginPage;
+import com.salesforce.utility.CommonUtilities;
 
-public class RandomScenariosTest extends BaseTest {
 
+public class RandomScenariosTest extends BaseTest{
+	WebDriver driver;
+	LoginPage login;
+	HomePage home;
+	AccountPage account;
+	OpportunityPage opportunity;
+	LeadsPage leads;
+	ContactsPage contacts;
+	RandomScenariosPage randomscenarios;
+	static Actions action;
+	static  WebDriverWait wait;
+	CommonUtilities common = new CommonUtilities();
 	
-	public static void ToVerifyFullNameOfUser() throws Exception{
-		
-		driver.findElement(By.xpath("//a[contains(text(),'Home')]")).click();
-		System.out.println("User full name is diplayed as: "+driver.findElement(By.xpath("//h1[@class='currentStatusUserName']")).getText());
-		driver.findElement(By.xpath("//h1[@class='currentStatusUserName']"));
-		driver.findElement(By.xpath("//h1[@class='currentStatusUserName']")).click();
-		System.out.println("Test Pass- Page displayed is same as My Profile page.");
-		
+	@BeforeMethod
+	public void beforeTest(Method method) throws Exception {
+		report.startSingleTestReport(method.getName());
+		driver = getDriver();
+		String url = common.getApplicationProperty("url");
+		driver.get(url);
+		login = new LoginPage(driver);
+		home = new HomePage(driver);
+		account = new AccountPage(driver);
+		opportunity = new OpportunityPage(driver);
+		leads = new LeadsPage(driver);
+		contacts = new ContactsPage(driver);
+		randomscenarios= new RandomScenariosPage(driver);
+		login.loginapplication();
+		report.logTestInfo("UserName, Password is entered and Login is clicked");
 	}
 	
-	public static void EditingLastName() throws Exception{
-		driver.findElement(By.xpath("//a[contains(text(),'Home')]")).click();
-		driver.findElement(By.xpath("//h1[@class='currentStatusUserName']"));
-		driver.findElement(By.xpath("//h1[@class='currentStatusUserName']")).click();
-		driver.findElement(By.xpath("//tbody/tr[1]/td[1]/div[1]/div[2]/div[2]/div[1]/h3[1]/div[1]/div[1]/a[1]/img[1]"));
-		driver.findElement(By.xpath("//tbody/tr[1]/td[1]/div[1]/div[2]/div[2]/div[1]/h3[1]/div[1]/div[1]/a[1]/img[1]")).click();
-		
-		Thread.sleep(3000);
-		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='contactInfoContentId']")));
-		
-		driver.findElement(By.xpath("//a[contains(text(),'About')]"));
-		driver.findElement(By.xpath("//a[contains(text(),'About')]")).click();
-		
-		driver.findElement(By.xpath(" //input[@id='lastName']"));
-		driver.findElement(By.xpath("//input[@id='lastName']")).clear();
-		driver.findElement(By.xpath("//input[@id='lastName']")).sendKeys("Abcd");
-		
-        driver.findElement(By.xpath("//body/div[1]/div[1]/div[1]/div[2]/form[1]/div[1]/input[1]")).click();
-        Thread.sleep(1000);
-        driver.switchTo().defaultContent();
-        
-        Thread.sleep(2000);
-        System.out.println("User's last name updated and is diplayed as: "+driver.findElement(By.xpath("//span[@id='tailBreadcrumbNode']")).getText());
-        Thread.sleep(2000);
-        System.out.println("Name updated at user menu as top right hand side to :"+driver.findElement(By.xpath("//span[@id='userNavLabel']")).getText());
-		
+    @Test	
+	public void CreateNewcontact() throws Exception {
+       randomscenarios.EnterHome();
+       opportunity.ClickViewPopup();
+       randomscenarios.ClickNameLink();
+       System.out.println("FirstNameLastName page is displayed");
+}
+
+   @Test
+   public void Editedlastname() throws Exception {
+       randomscenarios.EnterHome();
+       opportunity.ClickViewPopup();
+       randomscenarios.ClickNameLink();
+       Thread.sleep(10000);
+       home.enterintoedit();
+       home.enterintoprofileiframe();
+       home.enterintoabout();
+       home.ClearLastname();
+       home.EnterLastNameField();
+       home.MyProfileSave();
+       System.out.println("Saved all");
+       System.out.println("LastName edited is updated");
+}
+
+   @Test
+   public void tabCustomization() throws Exception {
+      randomscenarios.EnterintoTab();
+      Thread.sleep(10000);
+      randomscenarios.Customizemytab();
+      randomscenarios.SelectChatter();
+      randomscenarios.AddChatter(); 
+      randomscenarios.RemoveChatter();
+      randomscenarios.SaveTab();
+      home.enterintoUsermenu();
+      Thread.sleep(5000);
+      home.enterintologout();
+      Thread.sleep(6000);
+      login.loginapplication();
+      driver.manage().window().maximize();
+      System.out.println("Tab Customization is verified");
+}
+
+   @Test
+   public void BlockinganeventinCalendar() throws Exception {
+      randomscenarios.EnterHome();
+      opportunity.ClickViewPopup();
+      randomscenarios.ClickCurrentDate();
+	  randomscenarios.Selecteightpmlink();
+	  randomscenarios.ClickSubjectcombo();
+	  Set<String> windowHandles = driver.getWindowHandles();
+	  String currentHandle = driver.getWindowHandle();
+	  windowHandles.remove(currentHandle);
+	  String newHandle = windowHandles.iterator().next();
+	  driver.switchTo().window(newHandle);
+	  randomscenarios.Selectother();
+	  driver.switchTo().window(currentHandle);
+	  randomscenarios.Endtimedropdown();
+	  randomscenarios.EnterNinepm();
+	  randomscenarios.Clicksave();
+	  randomscenarios.ErrorMessage();
+	  System.out.println("Calendar for FirstNameLastName page is displayed with other in 8-9PM time slot");
+	
+}
+   @Test
+   public void BlockinganeventinCalendarwithweeklyreccurance() throws Exception {
+	    randomscenarios.EnterHome();
+	    opportunity.ClickViewPopup();;
+	    randomscenarios.ClickCurrentDate();
+	    Thread.sleep(10000);
+		randomscenarios.ClickFourpm();
+		randomscenarios.ClickSubjectcombo();
+		  Set<String> windowHandles = driver.getWindowHandles();
+		  String currentHandle = driver.getWindowHandle();
+		  for (String newHandle : windowHandles) {
+			  if(!newHandle.equals(currentHandle))
+		      driver.switchTo().window(newHandle);}
+		  randomscenarios.Selectother();
+		  driver.switchTo().window(currentHandle);
+		  randomscenarios.Endtimedropdown();
+		  randomscenarios.ClickSevenpm();
+		  randomscenarios.ClickRecurrence();
+		  randomscenarios.ClickWeekly();
+		  randomscenarios.ClickCurrentDate();
+	      randomscenarios.Date();
+		  randomscenarios.ClickRecurrencesave();
 	}
-	
-	public static void TabCustomization() throws Exception {
-		driver.findElement(By.xpath("//img[@class='allTabsArrow']")).click(); 
-		System.out.println("'All Tabs' page is displayed. ");
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//input[@value='Customize My Tabs']"));
-		driver.findElement(By.xpath("//input[@value='Customize My Tabs']")).click();  
-		Thread.sleep(3000);
-		
-		System.out.println("'Customize My Tab' page is displayed.");
-		driver.findElement(By.xpath("//option[contains(text(),'Campaigns')]"));
-		driver.findElement(By.xpath("//option[contains(text(),'Campaigns')]")).click(); 
-		driver.findElement(By.xpath("//*[@class=\"leftArrowIcon\"]"));
-		driver.findElement(By.xpath("//*[@class=\"leftArrowIcon\"]")).click(); 
-		driver.findElement(By.xpath("//input[@value=' Save ']")).click();
-		Thread.sleep(1000);
-		System.out.println("Test Passed -Selected tab removed from  All Tab page.");		
-		driver.findElement(By.id("userNavLabel")).click();		
-		driver.findElement(By.xpath("//a[contains(text(),'Logout')]")).click();		
-		Thread.sleep(5000);
-		loginPage.login(username, password);
-		Thread.sleep(1000);
-		System.out.println("Pass-Tab removed before login out is not present in tab bar.");
-	}
-	
-	public static void BlockingEventInCalendar() throws Exception{
-		driver.findElement(By.xpath("//a[contains(text(),'Home')]")).click();
-		System.out.println("Current Day & Date displayed below user's name.");
-		driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[2]/span[2]/a[1]")); 
-		driver.findElement(By.xpath("html[1]/body[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[2]/span[2]/a[1]")).click();
-		System.out.println("User's Calendar is displayed");
-		
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView();", driver.findElement(By.xpath("//a[contains(text(),'8:00 PM')]")));
-		
-		driver.findElement(By.xpath("//a[contains(text(),'8:00 PM')]")).click();
-		
-		driver.switchTo().activeElement();
-		
-		driver.findElement(By.xpath("//*[@class='comboboxIcon']")).click();
-		Thread.sleep(3000);
-		
-		ArrayList<String> windows = new ArrayList<String>(driver.getWindowHandles());
-	
-		driver.switchTo().window(windows.get(1));
-		
-		driver.findElement(By.xpath("//a[contains(text(),'Other')]"));
-		driver.findElement(By.xpath("//a[contains(text(),'Other')]")).click();
-		
-		driver.switchTo().window(windows.get(0));
-		
-		Actions act = new Actions(driver);
-		driver.findElement(By.xpath("//input[@id='EndDateTime_time']")).clear();
-		WebElement endTime = driver.findElement(By.xpath("//*[@id='timePickerItem_42']"));
-		
-		do {
-			act.sendKeys(Keys.ARROW_DOWN).perform();
-			
-		}while(!endTime.isDisplayed());
-		endTime.click();
-		
-		driver.findElement(By.xpath("//input[@value=' Save ']")).click();
-		
-		System.out.println("Oher event is added to user's calendar for 8-9PM slot.");
-		}
-		
-	public static void BlockingEventWithWeeklyRecurrance() throws Exception{
-		driver.findElement(By.xpath("//a[contains(text(),'Home')]")).click();		
-		System.out.println("Current Day & Date displayed below user's name.");
-		
-		driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[2]/span[2]/a[1]")); 
-		driver.findElement(By.xpath("html[1]/body[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[2]/span[2]/a[1]")).click();
-		
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView();", driver.findElement(By.xpath("//a[contains(text(),'4:00 PM')]")));
-		
-		driver.findElement(By.xpath("//a[contains(text(),'4:00 PM')]")).click();
-		
-		driver.switchTo().activeElement();
-		
-		driver.findElement(By.xpath("//*[@class='comboboxIcon']")).click();
-		Thread.sleep(3000);
-		
-		ArrayList<String> windows = new ArrayList<String>(driver.getWindowHandles());
-	
-		driver.switchTo().window(windows.get(1));	
-		driver.findElement(By.xpath("//a[contains(text(),'Other')]"));
-		driver.findElement(By.xpath("//a[contains(text(),'Other')]")).click();		
-		driver.switchTo().window(windows.get(0));
-		
-		Actions act1 = new Actions(driver);
-		driver.findElement(By.xpath("//input[@id='EndDateTime_time']")).clear();
-		WebElement endTime1 = driver.findElement(By.xpath("//*[@id='timePickerItem_38']"));
-		
-		do {
-			act1.sendKeys(Keys.ARROW_DOWN).perform();
-			
-		}while(!endTime1.isDisplayed());
-		endTime1.click();
-		
-		driver.findElement(By.xpath("//input[@id='IsRecurrence']"));
-		driver.findElement(By.xpath("//input[@id='IsRecurrence']")).click();
-		
-		driver.findElement(By.xpath("//input[@id='rectypeftw']"));
-		driver.findElement(By.xpath("//input[@id='rectypeftw']")).click();
-		
-		System.out.println("Weekly recurrance selected with recurrs every 1 week option and current day is selected.");
-		
-		driver.findElement(By.xpath("//input[@id='RecurrenceEndDateOnly']"));
-		driver.findElement(By.xpath("//input[@id='RecurrenceEndDateOnly']")).click();//td[contains(text(),'19')]
-		
-		driver.findElement(By.xpath("//td[contains(text(),'19')]"));
-		driver.findElement(By.xpath("//td[contains(text(),'19')]")).click();
-		
-		driver.findElement(By.xpath("//input[@value=' Save ']"));
-		driver.findElement(By.xpath("//input[@value=' Save ']")).click();
-		
-		driver.findElement(By.xpath("//*[@class='monthViewIcon']"));
-		driver.findElement(By.xpath("//*[@class='monthViewIcon']")).click();
-		
-		System.out.println("Final Test Passed");
-	}
+   
 }

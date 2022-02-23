@@ -1,7 +1,4 @@
 package com.salesforce.utility;
-
-import static com.salesforce.utility.Constants.GENERATE_REPORT_PATH;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -10,7 +7,7 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import com.salesforce.utility.GenerateReports;
+import static com.salesforce.utility.Constants.GENERATE_REPORT_PATH;
 
 public class GenerateReports {
 
@@ -18,10 +15,8 @@ public class GenerateReports {
 	public static ExtentReports extent;
 	public static ExtentTest logger;
 	private static GenerateReports ob;
-	static String testcaseName = null;
 	
 	private GenerateReports() {
-		
 	}
 	
 	public static GenerateReports getInstance() {
@@ -31,7 +26,10 @@ public class GenerateReports {
 		return ob;
 	}
 
+	static String testcaseName = null;
+
 	public void startExtentReport() {
+
 		htmlReporter = new ExtentHtmlReporter(GENERATE_REPORT_PATH);
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
@@ -40,7 +38,7 @@ public class GenerateReports {
 		extent.setSystemInfo("User Name", "Jayashree");
 
 		htmlReporter.config().setDocumentTitle("Test Execution Report");
-		htmlReporter.config().setReportName("Salesforce Regression Test");
+		htmlReporter.config().setReportName("Salesforce Regression tests");
 		htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
 		htmlReporter.config().setTheme(Theme.STANDARD);
 	}
@@ -51,19 +49,21 @@ public class GenerateReports {
 	}
 
 	public void logTestInfo(String message) {
+
 		logger.log(Status.INFO, message);
 	}
 
-	public void logTestpassed() {
-		logger.log(Status.PASS, MarkupHelper.createLabel(testcaseName + "is pass Test", ExtentColor.GREEN));
+	public void logTestpassed(String message) {
+		logger.log(Status.PASS, MarkupHelper.createLabel(testcaseName + "is passTest", ExtentColor.GREEN));
 	}
 
-	public void logTestFailed() {
-		logger.log(Status.FAIL, MarkupHelper.createLabel(testcaseName + "is not pass Test", ExtentColor.RED));
+	public void logTestFailed(String message) {
+		logger.log(Status.FAIL, MarkupHelper.createLabel(testcaseName + "is not passTest", ExtentColor.RED));
 	}
 
 	public void endTestReport() {
 		extent.flush();
 	}
+
 
 }

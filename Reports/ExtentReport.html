@@ -37,7 +37,7 @@
 		</ul>
 
 		<!-- report name -->
-		<span class='report-name'>Salesforce Regression Test</span>
+		<span class='report-name'>Salesforce Regression tests</span>
 		
 		<!-- report headline -->
 		<span class='report-headline'></span>
@@ -46,7 +46,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Feb 12, 2022 10:47:53 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Feb 22, 2022 11:10:54 PM</span>
 				</a>
 			</li>
 			<li>
@@ -72,6 +72,7 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -122,10 +123,10 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>5</span> test(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='40%'><span class='strong'>2</span> test(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='60%'>3</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -137,10 +138,10 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='20.833%'><span class='strong'>5</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='84.906%'><span class='strong'>45</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='79.167%'>19</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='5.66%'>3</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='9.434%'>5</span> others
 				</div>
 			</div>
 		</div>
@@ -157,15 +158,15 @@
 				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>CheckRememberMe_3</span>
-						<span class='test-time'>Feb 12, 2022 10:47:54 PM</span>
+						<span class='test-name'>CreateAccountreport</span>
+						<span class='test-time'>Feb 22, 2022 11:10:54 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 12, 2022 10:47:54 PM</span>
-	<span class='label end-time'>Feb 12, 2022 10:48:07 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 13s+508ms</span>
+	<span class='label start-time'>Feb 22, 2022 11:10:54 PM</span>
+	<span class='label end-time'>Feb 22, 2022 11:11:49 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 54s+311ms</span>
 </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
@@ -177,40 +178,75 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>10:47:59 PM</td>
-					<td class='step-details'>remember me checked</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>10:48:00 PM</td>
-					<td class='step-details'>Entered username</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>10:48:00 PM</td>
-					<td class='step-details'>Entered password</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>10:48:01 PM</td>
-					<td class='step-details'>login successful</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>10:48:06 PM</td>
-					<td class='step-details'>logout successfull</td>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:11:01 PM</td>
+					<td class='step-details'><span class='label white-text green'>CreateAccountreportis passTest</span></td>
 				</tr>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>10:48:06 PM</td>
-					<td class='step-details'><span class='label white-text green'>CheckRememberMe_3is pass Test</span></td>
+					<td class='timestamp'>11:11:04 PM</td>
+					<td class='step-details'><span class='label white-text green'>CreateAccountreportis passTest</span></td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>10:48:07 PM</td>
-					<td class='step-details'>Test ended</td>
+					<td class='timestamp'>11:11:04 PM</td>
+					<td class='step-details'>UserName, Password is entered and Login is clicked</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:11:15 PM</td>
+					<td class='step-details'><span class='label white-text green'>CreateAccountreportis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:11:23 PM</td>
+					<td class='step-details'><span class='label white-text green'>CreateAccountreportis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:11:29 PM</td>
+					<td class='step-details'><span class='label white-text green'>CreateAccountreportis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:11:29 PM</td>
+					<td class='step-details'><span class='label white-text green'>CreateAccountreportis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:11:29 PM</td>
+					<td class='step-details'><span class='label white-text green'>CreateAccountreportis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:11:29 PM</td>
+					<td class='step-details'><span class='label white-text green'>CreateAccountreportis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:11:29 PM</td>
+					<td class='step-details'><span class='label white-text green'>CreateAccountreportis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:11:39 PM</td>
+					<td class='step-details'><span class='label white-text green'>CreateAccountreportis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:11:45 PM</td>
+					<td class='step-details'><span class='label white-text green'>CreateAccountreportis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:11:49 PM</td>
+					<td class='step-details'><span class='label white-text green'>CreateAccountreportis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:11:49 PM</td>
+					<td class='step-details'><span class='label white-text green'>CreateAccountreportis passTest</span></td>
 				</tr>
 			</tbody>
 		</table>
@@ -219,17 +255,17 @@
 				</li>
 				
 				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='2'>
 					<div class='test-heading'>
-						<span class='test-name'>ForgotPassword_4a</span>
-						<span class='test-time'>Feb 12, 2022 10:48:07 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-name'>MergeAccount</span>
+						<span class='test-time'>Feb 22, 2022 11:11:53 PM</span>
+						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 12, 2022 10:48:07 PM</span>
-	<span class='label end-time'>Feb 12, 2022 10:48:12 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 4s+409ms</span>
+	<span class='label start-time'>Feb 22, 2022 11:11:53 PM</span>
+	<span class='label end-time'>Feb 22, 2022 11:12:39 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 45s+837ms</span>
 </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
@@ -241,49 +277,62 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>10:48:10 PM</td>
-					<td class='step-details'>forgot password clicked</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>10:48:10 PM</td>
-					<td class='step-details'>username entered</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>10:48:11 PM</td>
-					<td class='step-details'>continue button clicked</td>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:11:59 PM</td>
+					<td class='step-details'><span class='label white-text green'>MergeAccountis passTest</span></td>
 				</tr>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>10:48:11 PM</td>
-					<td class='step-details'><span class='label white-text green'>ForgotPassword_4ais pass Test</span></td>
+					<td class='timestamp'>11:12:00 PM</td>
+					<td class='step-details'><span class='label white-text green'>MergeAccountis passTest</span></td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>10:48:12 PM</td>
-					<td class='step-details'>Test ended</td>
+					<td class='timestamp'>11:12:00 PM</td>
+					<td class='step-details'>UserName, Password is entered and Login is clicked</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:12:05 PM</td>
+					<td class='step-details'><span class='label white-text green'>MergeAccountis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:12:08 PM</td>
+					<td class='step-details'><span class='label white-text green'>MergeAccountis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:12:09 PM</td>
+					<td class='step-details'><span class='label white-text green'>MergeAccountis passTest</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>11:12:39 PM</td>
+					<td class='step-details'><span class='label white-text red'>MergeAccountis not passTest</span></td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
+							<ul class='screenshots'>
+								<li><img data-featherlight='C:\Users\pradeep\eclipse-workspace\SalesforceAutomation_POM/ScreenShots/salesforce.jpg' width='10%' src='C:\Users\pradeep\eclipse-workspace\SalesforceAutomation_POM/ScreenShots/salesforce.jpg' data-src='C:\Users\pradeep\eclipse-workspace\SalesforceAutomation_POM/ScreenShots/salesforce.jpg'></li>
+							</ul>
 					</div>
 				</li>
 				
 				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='3'>
 					<div class='test-heading'>
-						<span class='test-name'>ForgotPassword_4b</span>
-						<span class='test-time'>Feb 12, 2022 10:48:12 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-name'>SelectAccount</span>
+						<span class='test-time'>Feb 22, 2022 11:12:43 PM</span>
+						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 12, 2022 10:48:12 PM</span>
-	<span class='label end-time'>Feb 12, 2022 10:48:15 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+277ms</span>
+	<span class='label start-time'>Feb 22, 2022 11:12:43 PM</span>
+	<span class='label end-time'>Feb 22, 2022 11:13:37 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 54s+373ms</span>
 </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
@@ -295,39 +344,92 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>10:48:14 PM</td>
-					<td class='step-details'>login button clicked</td>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:12:49 PM</td>
+					<td class='step-details'><span class='label white-text green'>SelectAccountis passTest</span></td>
 				</tr>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>10:48:14 PM</td>
-					<td class='step-details'><span class='label white-text green'>ForgotPassword_4bis pass Test</span></td>
+					<td class='timestamp'>11:12:50 PM</td>
+					<td class='step-details'><span class='label white-text green'>SelectAccountis passTest</span></td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>10:48:15 PM</td>
-					<td class='step-details'>Test ended</td>
+					<td class='timestamp'>11:12:50 PM</td>
+					<td class='step-details'>UserName, Password is entered and Login is clicked</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:12:57 PM</td>
+					<td class='step-details'><span class='label white-text green'>SelectAccountis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:13:00 PM</td>
+					<td class='step-details'><span class='label white-text green'>SelectAccountis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:13:00 PM</td>
+					<td class='step-details'><span class='label white-text green'>SelectAccountis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:13:01 PM</td>
+					<td class='step-details'><span class='label white-text green'>SelectAccountis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:13:06 PM</td>
+					<td class='step-details'><span class='label white-text green'>SelectAccountis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:13:06 PM</td>
+					<td class='step-details'><span class='label white-text green'>SelectAccountis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:13:06 PM</td>
+					<td class='step-details'><span class='label white-text green'>SelectAccountis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:13:07 PM</td>
+					<td class='step-details'><span class='label white-text green'>SelectAccountis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:13:07 PM</td>
+					<td class='step-details'><span class='label white-text green'>SelectAccountis passTest</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>11:13:37 PM</td>
+					<td class='step-details'><span class='label white-text red'>SelectAccountis not passTest</span></td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
+							<ul class='screenshots'>
+								<li><img data-featherlight='C:\Users\pradeep\eclipse-workspace\SalesforceAutomation_POM/ScreenShots/salesforce.jpg' width='10%' src='C:\Users\pradeep\eclipse-workspace\SalesforceAutomation_POM/ScreenShots/salesforce.jpg' data-src='C:\Users\pradeep\eclipse-workspace\SalesforceAutomation_POM/ScreenShots/salesforce.jpg'></li>
+							</ul>
 					</div>
 				</li>
 				
 				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='4'>
 					<div class='test-heading'>
-						<span class='test-name'>LoginErrorMsg_1</span>
-						<span class='test-time'>Feb 12, 2022 10:48:15 PM</span>
+						<span class='test-name'>SelectEditview</span>
+						<span class='test-time'>Feb 22, 2022 11:13:42 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 12, 2022 10:48:15 PM</span>
-	<span class='label end-time'>Feb 12, 2022 10:48:18 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+55ms</span>
+	<span class='label start-time'>Feb 22, 2022 11:13:42 PM</span>
+	<span class='label end-time'>Feb 22, 2022 11:14:32 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 49s+921ms</span>
 </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
@@ -339,25 +441,70 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>10:48:17 PM</td>
-					<td class='step-details'>Entered username</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>10:48:17 PM</td>
-					<td class='step-details'>loginbutton clicked</td>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:13:50 PM</td>
+					<td class='step-details'><span class='label white-text green'>SelectEditviewis passTest</span></td>
 				</tr>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>10:48:17 PM</td>
-					<td class='step-details'><span class='label white-text green'>LoginErrorMsg_1is pass Test</span></td>
+					<td class='timestamp'>11:13:51 PM</td>
+					<td class='step-details'><span class='label white-text green'>SelectEditviewis passTest</span></td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>10:48:18 PM</td>
-					<td class='step-details'>Test ended</td>
+					<td class='timestamp'>11:13:51 PM</td>
+					<td class='step-details'>UserName, Password is entered and Login is clicked</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:13:57 PM</td>
+					<td class='step-details'><span class='label white-text green'>SelectEditviewis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:14:00 PM</td>
+					<td class='step-details'><span class='label white-text green'>SelectEditviewis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:14:01 PM</td>
+					<td class='step-details'><span class='label white-text green'>SelectEditviewis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:14:21 PM</td>
+					<td class='step-details'><span class='label white-text green'>SelectEditviewis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:14:27 PM</td>
+					<td class='step-details'><span class='label white-text green'>SelectEditviewis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:14:27 PM</td>
+					<td class='step-details'><span class='label white-text green'>SelectEditviewis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:14:28 PM</td>
+					<td class='step-details'><span class='label white-text green'>SelectEditviewis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:14:28 PM</td>
+					<td class='step-details'><span class='label white-text green'>SelectEditviewis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:14:32 PM</td>
+					<td class='step-details'><span class='label white-text green'>SelectEditviewis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:14:32 PM</td>
+					<td class='step-details'><span class='label white-text green'>SelectEditviewis passTest</span></td>
 				</tr>
 			</tbody>
 		</table>
@@ -366,17 +513,17 @@
 				</li>
 				
 				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='5'>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='5'>
 					<div class='test-heading'>
-						<span class='test-name'>LoginToSalesforce_2</span>
-						<span class='test-time'>Feb 12, 2022 10:48:18 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-name'>Selectnewview</span>
+						<span class='test-time'>Feb 22, 2022 11:14:32 PM</span>
+						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 12, 2022 10:48:18 PM</span>
-	<span class='label end-time'>Feb 12, 2022 10:48:23 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 4s+783ms</span>
+	<span class='label start-time'>Feb 22, 2022 11:14:32 PM</span>
+	<span class='label end-time'>Feb 22, 2022 11:15:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 45s+700ms</span>
 </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
@@ -388,34 +535,42 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>10:48:20 PM</td>
-					<td class='step-details'>Entered username</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>10:48:21 PM</td>
-					<td class='step-details'>Entered password</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>10:48:22 PM</td>
-					<td class='step-details'>loginbutton clicked</td>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:14:37 PM</td>
+					<td class='step-details'><span class='label white-text green'>Selectnewviewis passTest</span></td>
 				</tr>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>10:48:22 PM</td>
-					<td class='step-details'><span class='label white-text green'>LoginToSalesforce_2is pass Test</span></td>
+					<td class='timestamp'>11:14:39 PM</td>
+					<td class='step-details'><span class='label white-text green'>Selectnewviewis passTest</span></td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>10:48:23 PM</td>
-					<td class='step-details'>Test ended</td>
+					<td class='timestamp'>11:14:39 PM</td>
+					<td class='step-details'>UserName, Password is entered and Login is clicked</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:14:44 PM</td>
+					<td class='step-details'><span class='label white-text green'>Selectnewviewis passTest</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:14:47 PM</td>
+					<td class='step-details'><span class='label white-text green'>Selectnewviewis passTest</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>11:15:17 PM</td>
+					<td class='step-details'><span class='label white-text red'>Selectnewviewis not passTest</span></td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
+							<ul class='screenshots'>
+								<li><img data-featherlight='C:\Users\pradeep\eclipse-workspace\SalesforceAutomation_POM/ScreenShots/salesforce.jpg' width='10%' src='C:\Users\pradeep\eclipse-workspace\SalesforceAutomation_POM/ScreenShots/salesforce.jpg' data-src='C:\Users\pradeep\eclipse-workspace\SalesforceAutomation_POM/ScreenShots/salesforce.jpg'></li>
+							</ul>
 					</div>
 				</li>
 			</ul>
@@ -459,25 +614,25 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>24</div>
+					<div class='panel-lead'>53</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Feb 12, 2022 10:47:53 PM</div>
+					<div class='panel-lead'>Feb 22, 2022 11:10:54 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Feb 12, 2022 10:48:23 PM</div>
+			 		<div class='panel-lead'>Feb 22, 2022 11:15:22 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 0m 29s+175ms</div>
+					<div class='panel-lead'>0h 4m 27s+524ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -514,22 +669,22 @@
 
 		<script>
 			var statusGroup = {
-				passParent: 5,
-				failParent: 0,
+				passParent: 2,
+				failParent: 3,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				exceptionsParent: 0,
+				exceptionsParent: 3,
 				
-				passChild: 5,
-				failChild: 0,
+				passChild: 45,
+				failChild: 3,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
-				infoChild: 19,
-				exceptionsChild: 0,
+				infoChild: 5,
+				exceptionsChild: 3,
 				
 				passGrandChild: 0,
 				failGrandChild: 0,

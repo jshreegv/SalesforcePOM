@@ -1,4 +1,24 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 32.73 sec - in TestSuite
+Tests run: 5, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 13.888 sec <<< FAILURE! - in TestSuite
+CheckRememberMe_3(com.salesforce.tests.LoginTest)  Time elapsed: 0.178 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.salesforce.tests.LoginTest.CheckRememberMe_3(LoginTest.java:65)
+
+ForgotPassword_4a(com.salesforce.tests.LoginTest)  Time elapsed: 0.21 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.salesforce.tests.LoginTest.ForgotPassword_4a(LoginTest.java:83)
+
+ForgotPassword_4b(com.salesforce.tests.LoginTest)  Time elapsed: 0.031 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.salesforce.tests.LoginTest.ForgotPassword_4b(LoginTest.java:98)
+
+LoginErrorMsg_1(com.salesforce.tests.LoginTest)  Time elapsed: 0.03 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.salesforce.tests.LoginTest.LoginErrorMsg_1(LoginTest.java:26)
+
+LoginToSalesforce_2(com.salesforce.tests.LoginTest)  Time elapsed: 0.028 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.salesforce.tests.LoginTest.LoginToSalesforce_2(LoginTest.java:43)
+

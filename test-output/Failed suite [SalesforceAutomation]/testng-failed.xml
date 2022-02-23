@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [SalesforceAutomation]]">
+  <test thread-count="5" name="RegressionTest(failed)(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.salesforce.tests.LoginTest">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="setUp"/>
+          <include name="teardown"/>
+          <include name="endUp"/>
+          <include name="Forgot_Password_4B"/>
+          <include name="Forgot_Password_4A"/>
+        </methods>
+      </class> <!-- com.salesforce.tests.LoginTest -->
+    </classes>
+  </test> <!-- RegressionTest(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [SalesforceAutomation]] -->

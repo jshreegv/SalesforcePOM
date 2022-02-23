@@ -1,120 +1,100 @@
 package com.salesforce.tests;
 
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.ITestResult;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.salesforce.basetest.BaseTest;
-import com.salesforce.pages.sfdclogin.ForgotPasswordPage;
+import com.salesforce.pages.home.HomePage;
+import com.salesforce.pages.sfdclogin.LoginPage;
 import com.salesforce.utility.CommonUtilities;
-import com.salesforce.utility.Constants;
 
 public class LoginTest extends BaseTest {
-	static ITestResult result;
-	//String username=CommonUtilities.getApplicationProperty("email");
-	//String password=CommonUtilities.getApplicationProperty("password");
-	@Test
-	public void LoginErrorMsg_1() {
-		try {	
-			//String username=CommonUtilities.getApplicationProperty("email");
-			loginPage.EnterUserName(username);
-			report.logTestInfo("Entered username");
-			loginPage.ClickLogin();
-			report.logTestInfo("loginbutton clicked");
-			//Assert.assertEquals(loginPage.errorText(),Constants.PASSWORD_ERROR1);
-		} catch (Exception e) {
-			report.logTestInfo(e.getMessage());
-			result.setStatus(ITestResult.FAILURE);
+
+	WebDriver driver;
+	LoginPage login;
+	HomePage home;
+	CommonUtilities common = new CommonUtilities();
+
+	@BeforeMethod
+	public void beforeTest() throws IOException {
+		driver = getDriver();
+		String url = common.getApplicationProperty("url");
+		driver.get(url);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		login = new LoginPage(driver);
+		home = new HomePage(driver);
 		}
-		System.out.println("test ended");
-	}
-	
-	@Test
-	public void LoginToSalesforce_2() {
-		try {
-			loginPage.EnterUserName(username);
-			report.logTestInfo("Entered username");
-			loginPage.EnterPassword(password);
-			report.logTestInfo("Entered password");
-			loginPage.ClickLogin();
-			report.logTestInfo("loginbutton clicked");
-			//Assert.assertEquals(homePage.getTitleOfpage(), );
-		} catch(Exception e) {
-			report.logTestInfo(e.getMessage());
-			result.setStatus(ITestResult.FAILURE);
-		}
-		
-	}
 
 	@Test
-	public void CheckRememberMe_3() {
-		try {
-			loginPage.checkRememberMe();
-			report.logTestInfo("remember me checked");
-			loginPage.EnterUserName(username);
-			report.logTestInfo("Entered username");
-			loginPage.EnterPassword(password);
-			report.logTestInfo("Entered password");
-			loginPage.ClickLogin();
-			report.logTestInfo("login successful");
-			homePage.clickUserMenu();
-			homePage.logout();
-			report.logTestInfo("logout successfull");
-			Assert.assertEquals(loginPage.getUsername(), username);
-		} catch(Exception e) {
-			report.logTestInfo(e.getMessage());
-			result.setStatus(ITestResult.FAILURE);
-		}
-	}
-	
+	public void LoginErrorMessage1() throws Exception {
+		report.startSingleTestReport(Thread.currentThread().getStackTrace()[1].getMethodName());
+		login.EnterintoUserName();
+		report.logTestInfo("UserName is entered");
+		login.clickLoginButton();
+		login.loginErrorMessage();
+		System.out.println("Login error message is completed");
+		report.logTestInfo("Testcase 1 Login error message is completed");
+     }
+
 	@Test
-	public void ForgotPassword_4a() {
-		try {
-			ForgotPasswordPage fpage = new ForgotPasswordPage(driver); 
-			loginPage.clickForgotPass();
-			report.logTestInfo("forgot password clicked");
-			//Assert.assertTrue(fpage.titleChk("Forgot Your Password"));
-			fpage.enterUser(username);
-			report.logTestInfo("username entered");
-			fpage.clickContinue();
-			report.logTestInfo("continue button clicked");
-			//Assert.assertTrue(fpage.titleChk("Check Your Email"));
-		} catch(Exception e) {
-			report.logTestInfo(e.getMessage());
-			result.setStatus(ITestResult.FAILURE);
-		}
+	public void LoginToSalesForce2() throws Exception {
+		report.startSingleTestReport(Thread.currentThread().getStackTrace()[1].getMethodName());
+		login.loginapplication();
+		report.logTestInfo("UserName, Password is entered and Login is clicked");
+		System.out.println("Login to Salesforce is completed");
+		report.logTestInfo("Testcase 2 Login to Salesforce is completed");
 		
-	}
-	
+		}
+
 	@Test
-	public void ForgotPassword_4b() {	
-		try {
-			loginPage.EnterUserName("123");
-			loginPage.EnterPassword("22131");
-			loginPage.ClickLogin();
-			report.logTestInfo("login button clicked");
-			//Assert.assertEquals(loginPage.errorText(), Constants.PASSWORD_ERROR2);
-		} catch(Exception e) {
-			report.logTestInfo(e.getMessage());
-			result.setStatus(ITestResult.FAILURE);
-		}
-	}
-	
-	
-	public void login() {
-		
-			String username1=CommonUtilities.getApplicationProperty("email");
-			loginPage.EnterUserName(username1);
-			report.logTestInfo("Entered username");
-			String password1=CommonUtilities.getApplicationProperty("password");
-			loginPage.EnterPassword(password1);
-			report.logTestInfo("Entered password");
-			loginPage.ClickLogin();
-			report.logTestInfo("login successful");
-			String title = homePage.getTitleOfpage();
-			String title1 = "Home Page";
-			Assert.assertEquals(title, title1);
-			System.out.println("test ended");
-		
-	}	
-			
+	public void Check_RemeberMe_3() throws Exception {
+		report.startSingleTestReport(Thread.currentThread().getStackTrace()[1].getMethodName());
+		login.EnterintoUserName();
+		report.logTestInfo("Username is entered");
+		login.EnterIntoPassWord();
+		report.logTestInfo("Password is entered");
+		login.checkRememberme();
+		report.logTestInfo("RememberMe is selected");
+		login.clickLoginButton();
+		report.logTestInfo("Login is clicked");
+		home.HomePageTitle();
+		home.enterintoUsermenu();
+		report.logTestInfo("UserMenu is clicked");
+		home.enterintologout();
+		report.logTestInfo("Logout is clicked");
+		login.CheckUserField();
+		System.out.println("Check Remember Me is completed");
+		report.logTestInfo("Testcase 3 Check Remember Me is completed");
 }
+	   	
+	@Test
+	public void Forgot_Password_4A() throws Exception {
+		report.startSingleTestReport(Thread.currentThread().getStackTrace()[1].getMethodName());
+		login.EnterintoUserName();
+		report.logTestInfo("Username is entered");
+		login.forgotPassword();
+		login.UserNameField();
+		login.Continue();
+		login.ForgetPasswordMessage();
+		System.out.println("Forget password is completed");
+		report.logTestInfo("Testcase 4A Forget password is completed");
+	}
+	
+	@Test
+	public void Forgot_Password_4B() throws Exception {
+		report.startSingleTestReport(Thread.currentThread().getStackTrace()[1].getMethodName());
+		login.EnterintoUserName();
+		report.logTestInfo("Username is entered");
+		login.EnterIntoWrongPassword();
+		report.logTestInfo("WrongPassword is entered");
+		login.clickLoginButton();
+		report.logTestInfo("Login is clicked");
+		login.WrongPasswordAlertMessage();
+			System.out.println("testcase is pass");
+			System.out.println("Wrong password is completed");
+			report.logTestInfo("Testcase 4B Wrong password is completed");
+		}
+	}

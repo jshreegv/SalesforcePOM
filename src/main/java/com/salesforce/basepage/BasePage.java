@@ -1,185 +1,351 @@
 package com.salesforce.basepage;
 
 import java.util.List;
-import java.util.Set;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeTest;
 import com.salesforce.utility.GenerateReports;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BasePage {
-
-	protected static WebDriver driver;
-	protected static WebDriverWait wait;
-	protected static Actions action;
-	protected static GenerateReports report = GenerateReports.getInstance();
+	protected static GenerateReports report=GenerateReports.getInstance();
+	protected WebDriver driver;
 	
 	public BasePage(WebDriver driver) {
-		driver = driver;
-		PageFactory.initElements(driver, this);
+	 this.driver =driver;
+	 PageFactory.initElements(driver, this);
 	}
 	
-	/*public static void login(String userName, String password) {
-		WebElement email = driver.findElement(By.id("username"));
-		enterText(email, userName);
-		WebElement password1 = driver.findElement(By.id("password"));
-		enterText(password1, password);
-		WebElement login = driver.findElement(By.xpath("//input[@id='Login']"));
-		waitUntilVisible(login);
-		clickElement(login);
-	}*/
-	
-	public static void closeDriver() {
-		driver.close();
-	}
-	
-	public static void closeAllDriver() {
-		driver.quit();
-	}
-	
-	public String getTitle() {
-		return driver.getTitle();
-	}
-	
-	public static void enterText(WebElement element,String text) {
-		if(element.isDisplayed()) {
-			element.clear();
-			element.sendKeys(text);
-			System.out.println("Text entered");
+	public WebDriver getDriver() {
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		return driver;		
 		}
-		else {
-			System.out.println("Element not Displayed= " +element);
-		}
-	}
-	
-	public String getText(WebElement element) {
-		try {
-			waitUntilVisible(element);
-			return element.getText();
-		} catch (Exception ex) {
-			System.out.println("waiting for element= " +element);
-			return null;
-		}
-	}
-	
-	public Select getDropDown(WebElement element) {
-		Select select = new Select(element);
-		return select;
+	public WebDriver getDriver1() {
+		WebDriverManager.firefoxdriver().setup();
+		 WebDriver driver=new FirefoxDriver();
+		 return driver;
 	}
 
-	public static void clickElement(WebElement element) {
-		//waitUntilVisible(element);
-		if(element.isDisplayed()) {
-			element.click();
-			System.out.println("Text entered");
+		@BeforeTest
+		public void setUp() {
+			System.out.println("Before classs is executing");
+			report.startExtentReport();
+			System.out.println("extent report document is created");
 		}
-		else {
-			System.out.println("click not possible= " +element);
+					
+		
+		public static void getTitle(String actualtitle, String expectedTitle) {
+		  if (actualtitle.equals(expectedTitle)) {
+				System.out.println("Pass : User is on that page");
+				report.logTestpassed("User is on that page");}
+			else {
+				System.out.println("Fail :  page is not Lunched");
+				report.logTestFailed("page is not Lunched");
+			}
+		  
 		}
-	}
-	
-	public static void waitUntilVisible(WebElement element) {
-		wait = new WebDriverWait(driver,40);
-		wait.until(ExpectedConditions.visibilityOf(element));
-		System.out.println("waiting for element= " +element);
+		
+		public void waitforElement(WebElement element){
 
-	}
-	
-	public static void waitUntilAlertIsPresent() {
-		wait = new WebDriverWait(driver,30);
-		wait.until(ExpectedConditions.alertIsPresent());
-	}
-	
-	public static void mouseOver(WebElement element) {
-		Actions action = new Actions(driver);
-		action.moveToElement(element).build().perform();
-	}
-	
-	public static void mouseOver1(WebElement element) {
-		Actions action = new Actions(driver);
-		action.moveToElement(element).click(element).build().perform();
-	}
-	
-	public static void droppable(WebElement source, WebElement target, WebElement target1) {
-		Actions action = new Actions(driver);
-		action.clickAndHold(source).moveToElement(target).release(target1).build().perform();
-	
-	}
-	
-	public static void AcceptAlert() {
-		waitUntilAlertIsPresent();		
-		Alert alert = driver.switchTo().alert();
-		System.out.println("alert text="+alert.getText());
-		alert.accept();	
-	}
-	
-	public static void selectByTextData(WebElement element,String text) {
-		Select select = new Select(element);
-		select.selectByVisibleText(text);
-	}
-	
-	public static void selectByIndexData(WebElement element,int index) {
-		Select select = new Select(element);
-		select.selectByIndex(index);
-	}
-	
-	public static void selectByValueData(WebElement element,String text) {
-		Select select = new Select(element);
-		select.selectByValue(text);
-	}
-	
-	public void switchToFrameByName(WebElement element) {
-		waitUntilVisible(element);
-		driver.switchTo().frame(element);
-	}
-	
-	public void switchBackToDefault() {
-		driver.switchTo().defaultContent();
-	}
-	
-	public boolean waitUntilTitleContains(String title) {
-		try {
-			return wait.until(ExpectedConditions.titleContains(title));
-		} catch(Exception e) {
-			System.out.println("waiting for page to load= " + title);
-			return false;
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			wait.until(ExpectedConditions.visibilityOf(element));
+			report.logTestInfo("Waiting for the element to be vissible");
 		}
-	}
-	
-	public boolean checkOptionPresentSelect(WebElement element,String text) {
-		Select option = new Select(element);
-		List<WebElement> options = option.getOptions();
-		boolean flag = false;
-		for(WebElement ele : options) {
-			if(ele.getText().equalsIgnoreCase(text)) {
-				flag = true;
-				break;
+		
+		public void waitUntilAlertIsPresent() {
+			WebDriverWait wait = new WebDriverWait(driver, 30);
+			wait.until(ExpectedConditions.alertIsPresent());
+			report.logTestInfo("Waiting for the element to be present");
+		}
+		
+		public static void enterText(WebElement obj,String textval,String objName) throws Exception
+
+		{
+			if(obj.isDisplayed())
+			{
+				Thread.sleep(4000);
+				obj.sendKeys(textval);
+				System.out.println("pass: "+textval+"value is entered in "+objName+"field");
+				report.logTestpassed("value is entered");
+								
+			}
+			else
+			{
+				System.out.println("fail:" +objName+ "field does not exist please check application");
+				report.logTestFailed("field does not exist please check application");
+				
 			}
 		}
-		return flag;
-	}
-	
-	public String switchWindow() {
-		String currentWindow = driver.getWindowHandle();
-		Set<String> windows = driver.getWindowHandles();
-		for(String window : windows) {
-			if(!window.equals(currentWindow)) {
-				driver.switchTo().window(window);
-				break;
+		
+		public static void clickObj(WebElement obj,String objName)	{
+			if(obj.isDisplayed()) {
+				obj.click();
+				System.out.println("pass :" +objName + "button is clicked");
+				report.logTestpassed("button is clicked");
+			}
+			else {
+				System.out.println("Fail:" +objName+"button is not displayed ,please check the application");
+				report.logTestFailed("button is not displayed ,please check the application");
 			}
 		}
-		return currentWindow;
+		
+		public static void clearElement(WebElement element) {
+			if(element.isDisplayed()) {
+				element.clear();
+				System.out.println("pass: element cleared");
+				report.logTestpassed("element cleared");
+			}
+			else {
+				System.out.println("fail: element not displayed");
+				report.logTestFailed("element not displayed");
+			}
+		}
+	
+		public static void selectCheckBox(WebElement obj, String objName) {
+			
+			if(obj.isDisplayed()) {
+				
+				if(obj.isSelected()) {
+					System.out.println("Pass: "+objName+" is already selected");
+					report.logTestInfo(objName);
+				} 
+				else {
+				obj.click();
+				System.out.println("Pass: "+objName+" is selected");
+				report.logTestpassed("checkbox is selected");
+			    }
+			}
+				else {
+				System.out.println("Fail:"+objName+" is not present.Please chk application");	
+				report.logTestFailed("checkbox element is not displayed ,please check the application");
+			}	
+		}
+		
+		public static void selectDropdown(WebElement obj, String objName) {
+							
+					if(obj.isDisplayed()) {
+						obj.click();
+						System.out.println("Pass: "+objName+" is  selected");
+						report.logTestpassed("dropdown is selected");
+					} 
+					else {
+					
+						System.out.println("Fail:"+objName+" is not present.Please chk application");	
+					     report.logTestFailed("dropdown option is not present.Please chk application");
+				    }
+					
+		}
+					
+		
+		public static void dropDownGetOptions(WebElement element, String name) {
+			Select select4 = new Select(element);
+		List<WebElement> listofOptions = select4.getOptions();
+		int size=listofOptions.size();
+	    System.out.println("Number of elements: " +size);
+	    for (WebElement webElement : listofOptions) {
+	    	if(webElement.getText().equals(name)) {
+	    		System.out.println("Pass: Account name is displayed in the dropdown");
+	    		report.logTestpassed("Account name is displayed in the dropdown");
+		}
+	    	else {
+	    		System.out.println("Fail: Account name is not displayed in the dropdown");
+	    		report.logTestFailed("Account name is not displayed in the dropdown");
+	    	}
+	    }
+		}
+		
+		public static void dropDownList(WebElement element) {
+			Select select4 = new Select(element);
+		    List<WebElement> listofOptions = select4.getOptions();
+		    int size=listofOptions.size();
+		    System.out.println("Number of elements: " +size);
+	        
+		}
+		
+		
+		public static void dropDownoptionsclick(WebElement element, String name) {
+			Select select4 = new Select(element);
+		List<WebElement> listofOptions = select4.getOptions();
+		int size=listofOptions.size();
+		 System.out.println("Number of elements: " +size);
+		for (WebElement webElement : listofOptions) {
+			if(webElement.getText().equals(name))
+            {
+				webElement.click();
+                break;
+            }
+			System.out.println("Pass: Account name is displayed in the dropdown");
+			report.logTestpassed("Account name is displayed in the dropdown");
+				}
+		}	
+		
+		public static void validateErrormessage(String actualmsg, String errormsg) {
+
+			if(actualmsg.equalsIgnoreCase(errormsg))
+			{
+				System.out.println("TestCase is passed");
+				report.logTestpassed("validation is equal");
+			}
+			else {
+			System.out.println("TestCase is failed");
+			report.logTestFailed("Validation is incorrect");
+		    }
+		}
+
+	public static void switchFrame( WebDriver driver,WebElement obj) {
+		 
+	    if(obj.isDisplayed()) {
+	     driver.switchTo().frame(obj);
+	     System.out.println("Pass: we can switch to the "+obj+ " frame");
+	     report.logTestpassed("we can switch to the frame");
+	     
+	    }else {
+	     System.out.println("fail: we can't switch to the "+obj+ " frame");
+	     report.logTestFailed("Cannot Switch to frame");
+	    }
+	}
+
+	public static void switchFrameid( WebDriver driver,String obj) {
+		 
+	     driver.switchTo().frame(obj);
+	     System.out.println("Pass: we can switch to the "+obj+ " frame");
+	     report.logTestpassed("we can switch to the frame");
+	     
+	    }
+
+	public static void switchdefaultFrame( WebDriver driver)
+	{
+	driver.switchTo().defaultContent();
+	System.out.println("Pass: we can switch to the "+ driver + " back to frame");
+	report.logTestpassed("we can switch back to the frame");
+	}
+
+	public static void mouseOver(WebDriver driver,WebElement obj) {
+		if(obj.isDisplayed()) {
+	   Actions action=new Actions(driver);
+	   action.moveToElement(obj).build().perform();
+		System.out.println("Pass: "+obj+" is present");
+		report.logTestpassed("obj is present");
+		}
+	 else {
+			System.out.println("Fail:"+obj+" is not present.Please chk application");
+			report.logTestFailed("obj is not present.Please chk application");
+		}
 	}
 	
+	public static void mouseHoverDoubleClick(WebDriver driver, WebElement obj) {
+		if(obj.isDisplayed()) {
+			   Actions action=new Actions(driver);
+			   action.doubleClick(obj).build().perform();
+				System.out.println("Pass: "+obj+" is present");
+				report.logTestpassed("obj is present");
+				}
+			 else {
+					System.out.println("Fail:"+obj+" is not present.Please chk application");
+					report.logTestFailed("obj is not present.Please chk application");
+				}
 
-}
+	}
+	
+	public static void mouseHoverContextClick(WebDriver driver, WebElement obj) {
+		if(obj.isDisplayed()) {
+			   Actions action=new Actions(driver);
+			   action.contextClick(obj).build().perform();
+				System.out.println("Pass: "+obj+" is present");
+				report.logTestpassed("obj is present");
+				}
+			 else {
+					System.out.println("Fail:"+obj+" is not present.Please chk application");
+					report.logTestFailed("obj is not present.Please chk application");
+				}
+	}
 
+	public static void SelectbyText(WebElement obj, String VisibleText){
+		   if(obj.isDisplayed())
+		   {
+			   Select selObj=new Select(obj);
+	           selObj.selectByVisibleText(VisibleText);
+		           System.out.println("Pass: "+VisibleText+ " is Selected by VisibleText" );
+		           report.logTestpassed("Selected by VisibleText");		           
+		   } 
+		   else
+		   {
+		    System.out.println("Fail: "+VisibleText+ " is not available");
+		    report.logTestFailed("not Selected by VisibleText");
+		    
+		   }		   
+		   
+	}
+
+	
+	public static void SelectByValue(WebElement obj, String val) {
+		if(obj.isDisplayed()) {
+		   Select selObj=new Select(obj);
+		    
+		   selObj.selectByValue(val);
+		  System.out.println("pass:"+val + " is selected from drop down ");
+		  report.logTestpassed("Element is selected from drop down");
+		 
+		  }else {
+		   System.out.println("Fail:"+val+"is not selected");
+		   report.logTestFailed("Element is not selected from drop down");
+		  }
+		 }	  
+
+	public static void selectByIndex(WebElement obj, int index) {
+		  if(obj.isDisplayed()) {
+		   Select selObj=new Select(obj);
+		  selObj.selectByIndex(index);
+		  
+		  System.out.println("pass:"+index + " is selected from drop down ");
+		  report.logTestpassed("is selected from drop down");
+		  }else {
+		   System.out.println("Fail:"+index+"is not selected");
+		   report.logTestFailed("Element is not selected from drop down");
+		  }
+		 }
+      
+
+	public static void selectByVisibleText(WebElement obj, String Name) {
+		if(obj.isDisplayed()) {
+			 Select drop = new Select(obj);
+			 drop.selectByVisibleText(Name);
+		 System.out.println("Pass: dropdown is selected");
+		 report.logTestpassed("is selected from drop down");
+		 }
+		else {
+		 System.out.println("Fail: dropdown is not available check your application");
+		 report.logTestFailed("dropdown is not available check your application");
+		 }
+	 }
+
+	public static void Radiobutton(WebElement obj, String objName) {
+		
+		if(obj.isDisplayed() ){
+			obj.click();
+			System.out.println("Pass: "+objName+" is clicked");
+			report.logTestpassed("Element is clicked");
+		}else {
+			System.out.println("Fail:"+objName+" is not displayed .Please check your application");	
+			report.logTestFailed("Element is not displayed .Please check your application");
+		}
+	}
+ 
+	public static void switchtoAlert(WebDriver driver) {
+		 driver.switchTo().alert().accept();
+		 System.out.println("Pass: alert is present and accept");
+		 report.logTestpassed("alert is present and accept");
+		}
+	
+	}
+	
 

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results skipped="0" failed="5" ignored="0" total="5" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-02-11T18:44:27 CST" name="SalesforceAutomation" finished-at="2022-02-11T18:45:00 CST" duration-ms="32220">
+  <suite name="SalesforceAutomation" duration-ms="13497" started-at="2022-02-19T13:50:18 CST" finished-at="2022-02-19T13:50:32 CST">
     <groups>
     </groups>
-    <test started-at="2022-02-11T18:44:27 CST" name="RegressionTest" finished-at="2022-02-11T18:45:00 CST" duration-ms="32220">
+    <test name="RegressionTest" duration-ms="13497" started-at="2022-02-19T13:50:18 CST" finished-at="2022-02-19T13:50:32 CST">
       <class name="com.salesforce.tests.LoginTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.salesforce.tests.LoginTest@212bf671]" started-at="2022-02-11T18:44:27 CST" name="setUp" finished-at="2022-02-11T18:44:28 CST" duration-ms="113" status="PASS">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.salesforce.tests.LoginTest@3701eaf6]" name="setUp" is-config="true" duration-ms="71" started-at="2022-02-19T13:50:18 CST" finished-at="2022-02-19T13:50:18 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="initialSetUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.salesforce.tests.LoginTest@212bf671]" started-at="2022-02-11T18:44:28 CST" name="initialSetUp" finished-at="2022-02-11T18:44:34 CST" duration-ms="6330" status="PASS">
+        <test-method status="PASS" signature="initialSetUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.salesforce.tests.LoginTest@3701eaf6]" name="initialSetUp" is-config="true" duration-ms="2237" started-at="2022-02-19T13:50:18 CST" finished-at="2022-02-19T13:50:20 CST">
           <params>
             <param index="0">
               <value>
@@ -27,22 +27,60 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialSetUp -->
-        <test-method signature="CheckRememberMe_3()[pri:0, instance:com.salesforce.tests.LoginTest@212bf671]" started-at="2022-02-11T18:44:34 CST" name="CheckRememberMe_3" finished-at="2022-02-11T18:44:41 CST" duration-ms="6670" status="PASS">
+        <test-method status="FAIL" signature="CheckRememberMe_3()[pri:0, instance:com.salesforce.tests.LoginTest@3701eaf6]" name="CheckRememberMe_3" duration-ms="173" started-at="2022-02-19T13:50:20 CST" finished-at="2022-02-19T13:50:21 CST">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at com.salesforce.tests.LoginTest.CheckRememberMe_3(LoginTest.java:65)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1259)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:281)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:121)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckRememberMe_3 -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.salesforce.tests.LoginTest@212bf671]" started-at="2022-02-11T18:44:41 CST" name="tearDown" finished-at="2022-02-11T18:44:41 CST" duration-ms="676" status="PASS">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.salesforce.tests.LoginTest@3701eaf6]" name="tearDown" is-config="true" duration-ms="812" started-at="2022-02-19T13:50:21 CST" finished-at="2022-02-19T13:50:21 CST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=CheckRememberMe_3 status=SUCCESS method=LoginTest.CheckRememberMe_3()[pri:0, instance:com.salesforce.tests.LoginTest@212bf671] output={null}]]]>
+                <![CDATA[[TestResult name=CheckRememberMe_3 status=FAILURE method=LoginTest.CheckRememberMe_3()[pri:0, instance:com.salesforce.tests.LoginTest@3701eaf6] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="initialSetUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.salesforce.tests.LoginTest@212bf671]" started-at="2022-02-11T18:44:41 CST" name="initialSetUp" finished-at="2022-02-11T18:44:44 CST" duration-ms="2689" status="PASS">
+        <test-method status="PASS" signature="initialSetUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.salesforce.tests.LoginTest@3701eaf6]" name="initialSetUp" is-config="true" duration-ms="1617" started-at="2022-02-19T13:50:21 CST" finished-at="2022-02-19T13:50:23 CST">
           <params>
             <param index="0">
               <value>
@@ -58,22 +96,60 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialSetUp -->
-        <test-method signature="ForgotPassword_4a()[pri:0, instance:com.salesforce.tests.LoginTest@212bf671]" started-at="2022-02-11T18:44:44 CST" name="ForgotPassword_4a" finished-at="2022-02-11T18:44:45 CST" duration-ms="842" status="PASS">
+        <test-method status="FAIL" signature="ForgotPassword_4a()[pri:0, instance:com.salesforce.tests.LoginTest@3701eaf6]" name="ForgotPassword_4a" duration-ms="211" started-at="2022-02-19T13:50:23 CST" finished-at="2022-02-19T13:50:23 CST">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at com.salesforce.tests.LoginTest.ForgotPassword_4a(LoginTest.java:83)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1259)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:281)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:121)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ForgotPassword_4a -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.salesforce.tests.LoginTest@212bf671]" started-at="2022-02-11T18:44:45 CST" name="tearDown" finished-at="2022-02-11T18:44:46 CST" duration-ms="729" status="PASS">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.salesforce.tests.LoginTest@3701eaf6]" name="tearDown" is-config="true" duration-ms="777" started-at="2022-02-19T13:50:23 CST" finished-at="2022-02-19T13:50:24 CST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=ForgotPassword_4a status=SUCCESS method=LoginTest.ForgotPassword_4a()[pri:0, instance:com.salesforce.tests.LoginTest@212bf671] output={null}]]]>
+                <![CDATA[[TestResult name=ForgotPassword_4a status=FAILURE method=LoginTest.ForgotPassword_4a()[pri:0, instance:com.salesforce.tests.LoginTest@3701eaf6] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="initialSetUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.salesforce.tests.LoginTest@212bf671]" started-at="2022-02-11T18:44:46 CST" name="initialSetUp" finished-at="2022-02-11T18:44:48 CST" duration-ms="2559" status="PASS">
+        <test-method status="PASS" signature="initialSetUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.salesforce.tests.LoginTest@3701eaf6]" name="initialSetUp" is-config="true" duration-ms="1616" started-at="2022-02-19T13:50:24 CST" finished-at="2022-02-19T13:50:26 CST">
           <params>
             <param index="0">
               <value>
@@ -89,22 +165,60 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialSetUp -->
-        <test-method signature="ForgotPassword_4b()[pri:0, instance:com.salesforce.tests.LoginTest@212bf671]" started-at="2022-02-11T18:44:48 CST" name="ForgotPassword_4b" finished-at="2022-02-11T18:44:49 CST" duration-ms="1135" status="PASS">
+        <test-method status="FAIL" signature="ForgotPassword_4b()[pri:0, instance:com.salesforce.tests.LoginTest@3701eaf6]" name="ForgotPassword_4b" duration-ms="30" started-at="2022-02-19T13:50:26 CST" finished-at="2022-02-19T13:50:26 CST">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at com.salesforce.tests.LoginTest.ForgotPassword_4b(LoginTest.java:98)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1259)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:281)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:121)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ForgotPassword_4b -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.salesforce.tests.LoginTest@212bf671]" started-at="2022-02-11T18:44:49 CST" name="tearDown" finished-at="2022-02-11T18:44:50 CST" duration-ms="666" status="PASS">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.salesforce.tests.LoginTest@3701eaf6]" name="tearDown" is-config="true" duration-ms="860" started-at="2022-02-19T13:50:26 CST" finished-at="2022-02-19T13:50:27 CST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=ForgotPassword_4b status=SUCCESS method=LoginTest.ForgotPassword_4b()[pri:0, instance:com.salesforce.tests.LoginTest@212bf671] output={null}]]]>
+                <![CDATA[[TestResult name=ForgotPassword_4b status=FAILURE method=LoginTest.ForgotPassword_4b()[pri:0, instance:com.salesforce.tests.LoginTest@3701eaf6] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="initialSetUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.salesforce.tests.LoginTest@212bf671]" started-at="2022-02-11T18:44:50 CST" name="initialSetUp" finished-at="2022-02-11T18:44:52 CST" duration-ms="2268" status="PASS">
+        <test-method status="PASS" signature="initialSetUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.salesforce.tests.LoginTest@3701eaf6]" name="initialSetUp" is-config="true" duration-ms="1590" started-at="2022-02-19T13:50:27 CST" finished-at="2022-02-19T13:50:28 CST">
           <params>
             <param index="0">
               <value>
@@ -120,22 +234,60 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialSetUp -->
-        <test-method signature="LoginErrorMsg_1()[pri:0, instance:com.salesforce.tests.LoginTest@212bf671]" started-at="2022-02-11T18:44:52 CST" name="LoginErrorMsg_1" finished-at="2022-02-11T18:44:53 CST" duration-ms="643" status="PASS">
+        <test-method status="FAIL" signature="LoginErrorMsg_1()[pri:0, instance:com.salesforce.tests.LoginTest@3701eaf6]" name="LoginErrorMsg_1" duration-ms="29" started-at="2022-02-19T13:50:28 CST" finished-at="2022-02-19T13:50:28 CST">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at com.salesforce.tests.LoginTest.LoginErrorMsg_1(LoginTest.java:26)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1259)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:281)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:121)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginErrorMsg_1 -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.salesforce.tests.LoginTest@212bf671]" started-at="2022-02-11T18:44:53 CST" name="tearDown" finished-at="2022-02-11T18:44:53 CST" duration-ms="669" status="PASS">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.salesforce.tests.LoginTest@3701eaf6]" name="tearDown" is-config="true" duration-ms="829" started-at="2022-02-19T13:50:28 CST" finished-at="2022-02-19T13:50:29 CST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=LoginErrorMsg_1 status=SUCCESS method=LoginTest.LoginErrorMsg_1()[pri:0, instance:com.salesforce.tests.LoginTest@212bf671] output={null}]]]>
+                <![CDATA[[TestResult name=LoginErrorMsg_1 status=FAILURE method=LoginTest.LoginErrorMsg_1()[pri:0, instance:com.salesforce.tests.LoginTest@3701eaf6] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="initialSetUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.salesforce.tests.LoginTest@212bf671]" started-at="2022-02-11T18:44:53 CST" name="initialSetUp" finished-at="2022-02-11T18:44:56 CST" duration-ms="2246" status="PASS">
+        <test-method status="PASS" signature="initialSetUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.salesforce.tests.LoginTest@3701eaf6]" name="initialSetUp" is-config="true" duration-ms="1644" started-at="2022-02-19T13:50:29 CST" finished-at="2022-02-19T13:50:31 CST">
           <params>
             <param index="0">
               <value>
@@ -151,22 +303,60 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialSetUp -->
-        <test-method signature="LoginToSalesforce_2()[pri:0, instance:com.salesforce.tests.LoginTest@212bf671]" started-at="2022-02-11T18:44:56 CST" name="LoginToSalesforce_2" finished-at="2022-02-11T18:44:59 CST" duration-ms="2890" status="PASS">
+        <test-method status="FAIL" signature="LoginToSalesforce_2()[pri:0, instance:com.salesforce.tests.LoginTest@3701eaf6]" name="LoginToSalesforce_2" duration-ms="28" started-at="2022-02-19T13:50:31 CST" finished-at="2022-02-19T13:50:31 CST">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at com.salesforce.tests.LoginTest.LoginToSalesforce_2(LoginTest.java:43)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1259)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:281)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:121)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginToSalesforce_2 -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.salesforce.tests.LoginTest@212bf671]" started-at="2022-02-11T18:44:59 CST" name="tearDown" finished-at="2022-02-11T18:44:59 CST" duration-ms="639" status="PASS">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.salesforce.tests.LoginTest@3701eaf6]" name="tearDown" is-config="true" duration-ms="796" started-at="2022-02-19T13:50:31 CST" finished-at="2022-02-19T13:50:31 CST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=LoginToSalesforce_2 status=SUCCESS method=LoginTest.LoginToSalesforce_2()[pri:0, instance:com.salesforce.tests.LoginTest@212bf671] output={null}]]]>
+                <![CDATA[[TestResult name=LoginToSalesforce_2 status=FAILURE method=LoginTest.LoginToSalesforce_2()[pri:0, instance:com.salesforce.tests.LoginTest@3701eaf6] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="endUp()[pri:0, instance:com.salesforce.tests.LoginTest@212bf671]" started-at="2022-02-11T18:44:59 CST" name="endUp" finished-at="2022-02-11T18:45:00 CST" duration-ms="423" status="PASS">
+        <test-method status="PASS" signature="endUp()[pri:0, instance:com.salesforce.tests.LoginTest@3701eaf6]" name="endUp" is-config="true" duration-ms="147" started-at="2022-02-19T13:50:31 CST" finished-at="2022-02-19T13:50:32 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endUp -->

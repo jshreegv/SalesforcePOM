@@ -5,9 +5,12 @@
   <parameter name="browser" value="chrome"></parameter>
     <classes>
   	 	 	<class name="com.salesforce.tests.LoginTest"/> 
-      	<!--<class name="com.salesforce.tests.UserMenuTest"/> 
+      <!-- <class name="com.salesforce.tests.HomeTest"/> 
      		<class name="com.salesforce.tests.AccountTest"/> 
-     	  	<class name="com.salesforce.tests.OpportunityTest"/> -->    	
+     	 <class name="com.salesforce.tests.OpportunityTest"/>  
+     		<class name="com.salesforce.tests.ContactsTest"/> 
+     		<class name="com.salesforce.tests.LeadsTest"/> 
+     		<class name="com.salesforce.tests.RandomScenariosTest"/> -->    	  	   	
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

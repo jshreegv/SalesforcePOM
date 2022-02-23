@@ -1,107 +1,126 @@
 package com.salesforce.tests;
 
-import org.testng.Assert;
-import org.testng.ITestResult;
+import java.io.IOException;
+import java.lang.reflect.Method;
+import java.util.List;
+import java.util.Set;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import com.salesforce.basetest.BaseTest;
-import com.salesforce.pages.opportunity.NewOppHomePage;
-import com.salesforce.pages.opportunity.OpporPage;
+import com.salesforce.pages.account.AccountPage;
+import com.salesforce.pages.contacts.ContactsPage;
+import com.salesforce.pages.home.HomePage;
+import com.salesforce.pages.opportunity.OpportunityPage;
+import com.salesforce.pages.sfdclogin.LoginPage;
+import com.salesforce.utility.CommonUtilities;
 
-public class OpportunityTest extends BaseTest {
-	static ITestResult result;
+public class OpportunityTest extends BaseTest{
 	
-	@Test
-	public void opporMenu_15() {
-		try {
-			OpporPage op = new OpporPage(driver);
-			opporTab(op);
-		} catch(Exception e) {
-			report.logTestInfo(e.getMessage());			
-			result.setStatus(ITestResult.FAILURE);
-		}
+	WebDriver driver;
+	LoginPage login;
+	HomePage home;
+	AccountPage account;
+	ContactsPage contacts;
+	OpportunityPage opportunity;
+	CommonUtilities common = new CommonUtilities();
+
+	@BeforeMethod
+	public void beforeTest(Method method) throws Exception {
+		report.startSingleTestReport(method.getName());
+		driver = getDriver();
+		String url = common.getApplicationProperty("url");
+		driver.get(url);
+		login = new LoginPage(driver);
+		home = new HomePage(driver);
+		account = new AccountPage(driver);
+		contacts = new ContactsPage(driver);
+		opportunity = new OpportunityPage(driver);
+		login.loginapplication();
+		report.logTestInfo("UserName, Password is entered and Login is clicked");
+		Thread.sleep(10000);
+		opportunity.enterintoOpportunities();
+		opportunity.ClickViewPopup();		
+
 	}
 	
-	private void opporTab(OpporPage op) {
-		
+   @Test
+	public void Opportunitydropdown() throws Exception {
+	    opportunity.ClickViewOpportunities();
+        //Get all options
+	    opportunity.ViewOpportunitiesdropdown();
+	    System.out.println("opportunitiesdropdown is completed");
 	}
-	
-	@Test
-	public void createOpp_16() {
-		try {
-			NewOppHomePage newop= new NewOppHomePage(driver);
-			OpporPage op = new OpporPage(driver);
-			String accname = "abcd";
-			String optname = "1234";
-			opporTab(op);
-			report.logTestInfo("opportunity tab clicked");
-			op.clickElement(op.getBtnNew());
-			Assert.assertTrue(op.waitUntilTitleContains("New Opportunity"));
-			newop.enterOppName(optname);
-			newop.enterAccName(accname);;
-			report.logTestInfo("account selected");
-			newop.getCloseDate();
-			report.logTestInfo("close date selected");
-			newop.clickElement(newop.getSaveBtn());
-			Assert.assertTrue(newop.waitUntilTitleContains(optname));
-		} catch(Exception e) {
-			report.logTestInfo(e.getMessage());			
-			result.setStatus(ITestResult.FAILURE);
-		}
-	}
-	
-	@Test
-	public void oppPipelineReport_17() {
-		try {
-			OpporPage op = new OpporPage(driver);
-			opporTab(op);
-			report.logTestInfo("opportunity tab clicked");
-			op.clickElement(op.getOppPipeline());
-			report.logTestInfo("opp pipeline clicked");			
-		} catch(Exception e) {
-			report.logTestInfo(e.getMessage());			
-			result.setStatus(ITestResult.FAILURE);
-		}
-	}
-	
-	@Test
-	public void stuckOppReport_18() {
-		try {
-			OpporPage op = new OpporPage(driver);
-			opporTab(op);
-			report.logTestInfo("opportunity tab clicked");
-			op.clickElement(op.getStuckOpp());
-			report.logTestInfo("stuck opp link clicked");			
-		} catch(Exception e) {
-			report.logTestInfo(e.getMessage());			
-			result.setStatus(ITestResult.FAILURE);
-		}
-	}
-	
-	@Test
-	public void quaterlySummaryReport_19() {
-		try {
-			OpporPage op = new OpporPage(driver);
-			opporTab(op);
-			report.logTestInfo("opportunity tab clicked");
-			op.getInterval("current");
-			report.logTestInfo("interval set to currentFQ");
-			op.getInclude("all");
-			report.logTestInfo("include all set");
-			op.clickElement(op.getRunReportBtn());
-			report.logTestInfo("run report clicked");
-			Assert.assertTrue(op.waitUntilTitleContains("Opportunity Report"));
-		} catch(Exception e) {
-			report.logTestInfo(e.getMessage());			
-			result.setStatus(ITestResult.FAILURE);
-		}
-	}
-	
-	private void opporTab(NewOppHomePage obj) {
-		loginPage.login(username, password);
-		Assert.assertTrue(homePage.waitUntilTitleContains("Home Page ~ "));
-		homePage.opporTab();
-		obj.clickElement(obj.getPopUp());
-		Assert.assertTrue(obj.waitUntilTitleContains("Opportunities: Home"));
-	}
+   
+    @Test
+    public void CreateNewopportunity() throws Exception {
+       opportunity.ClickNewButton();
+	   opportunity.EnterOpportunityname();
+	   opportunity.ClickLookup();
+	   Thread.sleep(10000);
+	   String oldWindow = driver.getWindowHandle();
+	   //Switching driver control to new window.
+	   //Set<String> getAllWindows = driver.getWindowHandles();
+	   //String[] getWindow = getAllWindows.toArray(new String[getAllWindows.size()]);
+	   //driver.switchTo().window(getWindow[1]);
+	   contacts.WindowHandle(oldWindow);
+	   Thread.sleep(3000);
+	   //switch to first frame
+	   driver.switchTo().frame("searchFrame");
+	   opportunity.EnterNameinLookup();
+	   opportunity.ClickGo();
+	   //Switching to Lookup Window
+	   driver.switchTo().defaultContent();
+	   //Switching to Insideframe(result)
+	   driver.switchTo().frame("resultsFrame");
+	   Thread.sleep(5000);
+       opportunity.PickaccountName();
+	   driver.switchTo().defaultContent();
+	   Thread.sleep(2000);
+	   opportunity.GiveClosedate();
+	   opportunity.Selecttodaydate();
+	   Actions action = new Actions(driver);
+	   action.sendKeys(Keys.ESCAPE).build().perform();
+	   Thread.sleep(2000);
+	   opportunity.Stagedropdown();
+	   opportunity.selectStagedropdown();
+	   Thread.sleep(2000);
+	   opportunity.EnterProbability();
+	   Thread.sleep(2000);
+	   opportunity.LeadsourceDropdown();
+	   opportunity.Saveopportunity();
+    }	
+
+   @Test
+   public void Opportunitypipeline() throws Exception {
+       opportunity.ClickOpportunitypipeline();
+       System.out.println("Report page with the opportunities that are pipelined will be displayed");
+       System.out.println("TestOpportunityPipeline is completed");
+
+   }
+   
+   @Test
+   public void StuckOpportunitiesReport() throws Exception {
+	   opportunity.ClickStuckOpportunitylink();
+       System.out.println("Report page with the opportunities that are stuck will be displayed");
+       System.out.println("TestStuckOpportunitiesReport is completed");
+   }
+   
+   @Test
+   public void QuarterlySummaryReport() throws Exception {
+      opportunity.Intervaldropdown();
+      Thread.sleep(2000);
+      opportunity.Includedropdown();
+      Thread.sleep(2000);
+      opportunity.ClickRunReport();
+      System.out.println("Report page with the opportunities that satisfies the search criteria will be displayed");
+      System.out.println("TestQuarterlySummaryReport is completed");
+   }
+
+
 }
